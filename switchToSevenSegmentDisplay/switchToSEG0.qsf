@@ -1,4 +1,4 @@
-# SEG0
+# 7 Segment 0
 set_location_assignment PIN_AE26 -to o_SEG0[0]
 set_location_assignment PIN_AE27 -to o_SEG0[1]
 set_location_assignment PIN_AE28 -to o_SEG0[2]
@@ -13,3 +13,13 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to o_SEG0[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to o_SEG0[4]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to o_SEG0[5]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to o_SEG0[6]
+
+# Switches
+set_location_assignment PIN_AB12 -to SW[0]
+set_location_assignment PIN_AC12 -to SW[1]
+set_location_assignment PIN_AF9 -to SW[2]
+set_location_assignment PIN_AF10 -to SW[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
