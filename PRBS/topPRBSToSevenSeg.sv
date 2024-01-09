@@ -4,7 +4,6 @@
 
 module topPRBSToSevenSeg
 ( input  var logic i_clk
-, input  var logic i_arst
 
 , output var logic [6:0] o_SEG0
 , output var logic [6:0] o_SEG1
@@ -12,9 +11,9 @@ module topPRBSToSevenSeg
 
   logic [6:0] randomValue;
 
+  // NOTE: Pushbotton is '0 when depressed and returns to '1 when released.
   sevenBitPRBS randomNumberGenerator
-  ( .i_clk
-  , .i_arst
+  ( .i_clk  (!i_clk)
 
   , .o_randomValue (randomValue)
   );
