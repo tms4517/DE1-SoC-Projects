@@ -4,20 +4,20 @@
 
 module sevenBitPRBS
 ( input  var logic i_clk
+, input  var logic i_arst
 
 , output var logic [6:0] o_randomValue
 );
 
   logic [6:0] shiftRegister_q;
 
-  // Note: Initial construct is non-synthesizable however Quartus SW is able to
-  // create power-up settings for variables.
-  initial shiftRegister_q = 7'b1;
-
-  always_ff @(posedge i_clk)
-    shiftRegister_q <= { shiftRegister_q[5:0]
-                       , shiftRegister_q[6]^shiftRegister_q[0]
-                       };
+  always_ff @(posedge i_clk, posedge i_arst)
+    if (i_arst)
+      shiftRegister_q <= 7'd1;
+    else
+      shiftRegister_q <= { shiftRegister_q[5:0]
+                         , shiftRegister_q[6]^shiftRegister_q[0]
+                         };
 
   always_comb
     o_randomValue = shiftRegister_q;
