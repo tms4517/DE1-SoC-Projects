@@ -61,10 +61,10 @@ module fsm
     o_rstPRBS  = (state_q == STATE_IDLE)    ? '1 : '0;
 
   always_comb
-    o_enPRBS = (state_q == STATE_TRIGGER) ? '1 : '0;
+    o_enPRBS = (state_q == STATE_TRIGGER)   ? '1 : '0;
 
   always_comb
-    o_startDelay = (state_q == STATE_DELAY)   ? '1 : '0;
+    o_startDelay = (state_q == STATE_DELAY) ? '1 : '0;
   // }}} Assert outputs
 
   // {{{ Turn on LEDS in sequence
@@ -85,12 +85,15 @@ module fsm
     else
       counter_q <= counter_q + 1'b1;
 
-  for (genvar i = 0; i < 10; i++) begin: perLED
+  genvar i;
+  generate
+    for (i = 0; i < 10; i++) begin: perLED
 
-    always_comb
-      o_turnOnLED[i] = ((counter_q > i) || (counter_q == i)) ? '1 : '0;
+      always_comb
+        o_turnOnLED[i] = ((counter_q > i) || (counter_q == i)) ? '1 : '0;
 
-  end: perLED
+    end: perLED
+  endgenerate
 
   always_comb
     allLEDSOn = (counter_q == 4'd10) ? '1 :'0;
