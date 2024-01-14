@@ -68,32 +68,30 @@ module fsm
   // }}} Assert outputs
 
   // {{{ Turn on LEDS in sequence
-  logic [9:0] leds_d, leds_q;
 
-  always_ff @(posedge i_tick)
-    if (stateIsLEDS)
-      leds_q <= leds_d;
+  logic [9:0] leds_q;
+
+  always_ff @(posedge i_tick, posedge i_arst)
+    if(i_arst)
+      leds_q <= '0;
+    else if (stateIsLEDS)
+      leds_q <= {leds_q[8:0], 1'b1};
     else
       leds_q <= '0;
 
   // Counter to sequence LEDS
   logic [3:0] counter_q;
 
-  always_ff @(posedge i_tick)
-    if (i_trigger)
+  always_ff @(posedge i_tick, posedge i_arst)
+    if (i_arst)
       counter_q <= '0;
-    else
+    else if (stateIsLEDS)
       counter_q <= counter_q + 1'b1;
-
-  genvar i;
-  generate
-    for (i = 0; i < 10; i++) begin: perLED
+    else
+      counter_q <= '0;
 
       always_comb
-        o_turnOnLED[i] = ((counter_q > i) || (counter_q == i)) ? '1 : '0;
-
-    end: perLED
-  endgenerate
+    o_turnOnLED = leds_q;
 
   always_comb
     allLEDSOn = (counter_q == 4'd10) ? '1 :'0;
