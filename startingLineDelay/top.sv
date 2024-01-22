@@ -5,23 +5,25 @@
 
 module top
 ( input  var logic i_clk          // CLOCK_50
+, input  var logic i_arst         // Physical KEY 1
+, input  var logic i_key          // Physical KEY 0
 
-, input  var logic i_key          // Physical KEY 0.
-
+, output var logic [9:0] o_led    // LEDs
 , output var logic [6:0] o_7Seg0
 , output var logic [6:0] o_7Seg1
 , output var logic [6:0] o_7Seg2
 , output var logic [6:0] o_7Seg3
 , output var logic [6:0] o_7Seg4
-
-, output var logic [9:0] o_led
 );
 
   logic tick_ms;
 
-  clkDiv div50K
+  clkDiv
+  #(.DIV (50000))
+  div50K
   ( .i_clk
   , .i_en ('1)
+  , .i_arst (!i_arst)
 
   , .o_clk (tick_ms)
   );
@@ -32,23 +34,24 @@ module top
   #(.DIV (5000))
   div5K
   ( .i_clk
-  , .i_en (tick_ms)
+  , .i_en   (tick_ms)
+  , .i_arst (!i_arst)
 
   , .o_clk (tick_hs)
   );
 
   logic delayComplete;
-  logic enPRBS, rstPRBS;
+  logic enPRBS;
   logic startDelay;
 
   fsm u_fsm
   ( .i_clk  (tick_ms)
   , .i_tick (tick_hs)
+  , .i_arst (!i_arst)
 
   , .i_trigger       (!i_key)
   , .i_delayComplete (delayComplete)
 
-  , .o_rstPRBS    (rstPRBS)
   , .o_enPRBS     (enPRBS)
   , .o_startDelay (startDelay)
 
@@ -59,14 +62,15 @@ module top
 
   prbs sevenBitPRBS
   ( .i_clk  (tick_ms)
-  , .i_srst (rstPRBS)
+  , .i_arst (!i_arst)
   , .i_en   (enPRBS)
 
   , .o_randomValue (randomValue)
   );
 
   delay delayByPRBS
-  ( .i_clk (tick_ms)
+  ( .i_clk  (tick_ms)
+  , .i_arst (!i_arst)
 
   , .i_delay          (randomValue)
   , .i_sampleAndStart (startDelay)
@@ -112,9 +116,6 @@ module top
   , .o_display (o_7Seg4)
   );
   // }}} Display random value
-
-
-
 
 endmodule
 

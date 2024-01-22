@@ -8,14 +8,17 @@ module clkDiv
 )
 ( input  var logic i_clk
 , input  var logic i_en
+, input  var logic i_arst
 
 , output var logic o_clk
 );
 
   logic [DIV_W-1:0] counter_q, counter_d;
 
-  always_ff @(posedge i_clk)
-    if (i_en)
+  always_ff @(posedge i_clk, posedge i_arst)
+    if (i_arst)
+      counter_q <= '0;
+    else if (i_en)
       counter_q <= counter_d;
     else
       counter_q <= counter_q;

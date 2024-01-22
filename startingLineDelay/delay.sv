@@ -6,6 +6,7 @@
 module delay
 #(parameter int unsigned DELAY_W = 7)
 ( input  var logic i_clk
+, input  var logic i_arst
 
 , input  var logic [DELAY_W-1:0] i_delay
 , input  var logic               i_sampleAndStart
@@ -17,8 +18,10 @@ module delay
 
   logic [DELAY_W-1:0] delay_q;
 
-  always_ff @(posedge i_clk)
-    if (i_sampleAndStart)
+  always_ff @(posedge i_clk, posedge i_arst)
+    if (i_arst)
+      delay_q <= '0;
+    else if (i_sampleAndStart)
       delay_q <= i_delay;
     else
       delay_q <= delay_q;
