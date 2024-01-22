@@ -9,11 +9,11 @@ module top
 , input  var logic i_key          // Physical KEY 0
 
 , output var logic [9:0] o_led    // LEDs
-, output var logic [6:0] o_7Seg0
-, output var logic [6:0] o_7Seg1
-, output var logic [6:0] o_7Seg2
-, output var logic [6:0] o_7Seg3
-, output var logic [6:0] o_7Seg4
+, output var logic [6:0] o_7Seg0  // 7 Segment display 0
+, output var logic [6:0] o_7Seg1  // 7 Segment display 1
+, output var logic [6:0] o_7Seg2  // 7 Segment display 2
+, output var logic [6:0] o_7Seg3  // 7 Segment display 3
+, output var logic [6:0] o_7Seg4  // 7 Segment display 4
 );
 
   logic tick_ms;
