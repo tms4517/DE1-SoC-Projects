@@ -38,4 +38,9 @@
 # VSCode settings
 .vscode
 
+# GTK Wave scripts used in TB.
+*.gtkw
+
+# GTK Wave simulation data.
+*.vcd
 
