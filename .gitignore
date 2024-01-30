@@ -44,3 +44,32 @@
 # GTK Wave simulation data.
 *.vcd
 
+# Metadata
+**/.metadata
+
+# Quartus reports/msgs/summary
+*.rpt 
+*.done 
+*.smsg
+*.summary
+
+# Temp files
+**/RemoteSystemsTempFiles
+
+# Generated HDL
+**/first_nios2_system
+
+# JTAG Debug information
+*.jdi
+
+# Quartus default settings file
+*.qdf
+
+# Device programming information.
+*.cdf
+
+# Pin out definitions.
+*.pin
+
+# Random XML
+*.sld
