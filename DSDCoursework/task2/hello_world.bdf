@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2023  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,15 +16,14 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 */
 (header "graphic" (version "1.4"))
 (pin
 	(input)
 	(rect 368 128 544 144)
-	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "iCLK_50" (rect 9 0 51 12)(font "Arial" ))
+	(text "INPUT" (rect 133 0 162 10)(font "Arial" (font_size 6)))
+	(text "iCLK_50" (rect 9 0 52 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 92 12)(pt 117 12))
@@ -34,14 +33,14 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 117 4)(pt 121 8))
 		(line (pt 117 12)(pt 121 8))
 	)
-	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 136 7 157 17)(font "Arial" (font_size 6)))
 	(annotation_block (location)(rect 304 144 368 160))
 )
 (pin
 	(output)
 	(rect 360 224 536 240)
-	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "oLEDG[7..0]" (rect 25 0 89 12)(font "Arial" ))
+	(text "OUTPUT" (rect 137 0 177 10)(font "Arial" (font_size 6)))
+	(text "oLEDG[7..0]" (rect 25 0 86 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -58,8 +57,8 @@ https://fpgasoftware.intel.com/eula.
 (pin
 	(output)
 	(rect 352 320 536 336)
-	(text "OUTPUT" (rect 145 0 183 10)(font "Arial" (font_size 6)))
-	(text "oDRAM_BA[1..0] " (rect 5 0 95 12)(font "Arial" ))
+	(text "OUTPUT" (rect 145 0 185 10)(font "Arial" (font_size 6)))
+	(text "oDRAM_BA[1..0] " (rect 5 0 92 11)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 184 8)(pt 132 8))
@@ -76,8 +75,8 @@ https://fpgasoftware.intel.com/eula.
 (pin
 	(output)
 	(rect 360 336 536 352)
-	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "oDRAM_CAS_N" (rect 5 0 84 12)(font "Arial" ))
+	(text "OUTPUT" (rect 137 0 177 10)(font "Arial" (font_size 6)))
+	(text "oDRAM_CAS_N" (rect 5 0 86 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -94,8 +93,8 @@ https://fpgasoftware.intel.com/eula.
 (pin
 	(output)
 	(rect 360 352 536 368)
-	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "oDRAM_CKE" (rect 5 0 69 12)(font "Arial" ))
+	(text "OUTPUT" (rect 137 0 177 10)(font "Arial" (font_size 6)))
+	(text "oDRAM_CKE" (rect 5 0 73 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -112,8 +111,8 @@ https://fpgasoftware.intel.com/eula.
 (pin
 	(output)
 	(rect 360 368 536 384)
-	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "oDRAM_CS_N" (rect 5 0 76 12)(font "Arial" ))
+	(text "OUTPUT" (rect 137 0 177 10)(font "Arial" (font_size 6)))
+	(text "oDRAM_CS_N" (rect 5 0 79 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -130,8 +129,8 @@ https://fpgasoftware.intel.com/eula.
 (pin
 	(output)
 	(rect 360 416 536 432)
-	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "oDRAM_RAS_N" (rect 5 0 84 12)(font "Arial" ))
+	(text "OUTPUT" (rect 137 0 177 10)(font "Arial" (font_size 6)))
+	(text "oDRAM_RAS_N" (rect 5 0 86 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -148,8 +147,8 @@ https://fpgasoftware.intel.com/eula.
 (pin
 	(output)
 	(rect 360 432 536 448)
-	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "oDRAM_WE_N" (rect 5 0 79 12)(font "Arial" ))
+	(text "OUTPUT" (rect 137 0 177 10)(font "Arial" (font_size 6)))
+	(text "oDRAM_WE_N" (rect 5 0 81 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -166,8 +165,8 @@ https://fpgasoftware.intel.com/eula.
 (pin
 	(output)
 	(rect 360 512 536 528)
-	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "oDRAM_CLK" (rect 5 0 71 12)(font "Arial" ))
+	(text "OUTPUT" (rect 137 0 177 10)(font "Arial" (font_size 6)))
+	(text "oDRAM_CLK" (rect 5 0 73 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -184,8 +183,8 @@ https://fpgasoftware.intel.com/eula.
 (pin
 	(output)
 	(rect 352 304 536 320)
-	(text "OUTPUT" (rect 145 0 183 10)(font "Arial" (font_size 6)))
-	(text "oDRAM_A[11..0] " (rect 5 0 94 12)(font "Arial" ))
+	(text "OUTPUT" (rect 145 0 185 10)(font "Arial" (font_size 6)))
+	(text "oDRAM_A[11..0] " (rect 5 0 91 11)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 184 8)(pt 132 8))
@@ -202,8 +201,8 @@ https://fpgasoftware.intel.com/eula.
 (pin
 	(output)
 	(rect 344 456 536 472)
-	(text "OUTPUT" (rect 153 0 191 10)(font "Arial" (font_size 6)))
-	(text "oDRAM_DQM[1..0]" (rect 5 0 102 12)(font "Arial" ))
+	(text "OUTPUT" (rect 153 0 193 10)(font "Arial" (font_size 6)))
+	(text "oDRAM_DQM[1..0]" (rect 5 0 100 11)(font "Arial" ))
 	(pt 192 8)
 	(drawing
 		(line (pt 192 8)(pt 140 8))
@@ -220,8 +219,8 @@ https://fpgasoftware.intel.com/eula.
 (pin
 	(bidir)
 	(rect 352 384 536 400)
-	(text "BIDIR" (rect 159 0 184 10)(font "Arial" (font_size 6)))
-	(text "DRAM_DQ[15..0] " (rect 5 0 98 12)(font "Arial" ))
+	(text "BIDIR" (rect 159 0 186 10)(font "Arial" (font_size 6)))
+	(text "DRAM_DQ[15..0] " (rect 5 0 94 11)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 128 4)(pt 106 4))
@@ -233,42 +232,57 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 132 8)(pt 128 12))
 	)
 	(flipy)
-	(text "VCC" (rect 160 7 180 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 160 7 181 17)(font "Arial" (font_size 6)))
 	(annotation_block (location)(rect 280 400 344 416))
 )
 (symbol
+	(rect 568 264 600 280)
+	(text "VCC" (rect 7 0 28 10)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 5 27 18)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 16)
+		(output)
+		(text "1" (rect 19 7 27 18)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 19 7 27 18)(font "Courier New" (bold))(invisible))
+		(line (pt 16 16)(pt 16 8))
+	)
+	(drawing
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(symbol
 	(rect 672 120 1184 304)
-	(text "first_nios2_system" (rect 200 -1 342 16)(font "Arial" (font_size 10)))
-	(text "inst" (rect 8 168 28 180)(font "Arial" ))
+	(text "first_nios2_system" (rect 200 -1 332 15)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 168 26 179)(font "Arial" ))
 	(port
 		(pt 0 72)
 		(input)
-		(text "clk_clk" (rect 0 0 44 14)(font "Arial" (font_size 8)))
-		(text "clk_clk" (rect 4 61 48 75)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 0 0 40 13)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 44 74)(font "Arial" (font_size 8)))
 		(line (pt 0 72)(pt 224 72))
 	)
 	(port
 		(pt 0 152)
 		(input)
-		(text "reset_reset_n" (rect 0 0 88 14)(font "Arial" (font_size 8)))
-		(text "reset_reset_n" (rect 4 141 92 155)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 0 0 79 13)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 141 83 154)(font "Arial" (font_size 8)))
 		(line (pt 0 152)(pt 224 152))
 	)
 	(port
 		(pt 0 112)
 		(output)
-		(text "led_pio_external_connection_export[7..0]" (rect 0 0 267 14)(font "Arial" (font_size 8)))
-		(text "led_pio_external_connection_export[7..0]" (rect 4 101 271 115)(font "Arial" (font_size 8)))
+		(text "led_pio_external_connection_export[7..0]" (rect 0 0 231 13)(font "Arial" (font_size 8)))
+		(text "led_pio_external_connection_export[7..0]" (rect 4 101 235 114)(font "Arial" (font_size 8)))
 		(line (pt 0 112)(pt 224 112)(line_width 3))
 	)
 	(drawing
-		(text "clk" (rect 209 43 229 58)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "clk" (rect 229 67 245 79)(font "Arial" (color 0 0 0)))
-		(text "led_pio_external_connection" (rect 60 83 261 98)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "export" (rect 229 107 264 119)(font "Arial" (color 0 0 0)))
-		(text "reset" (rect 195 123 231 138)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "reset_n" (rect 229 147 269 159)(font "Arial" (color 0 0 0)))
-		(text " first_nios2_system " (rect 425 168 530 180)(font "Arial" ))
+		(text "clk" (rect 209 43 229 57)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 229 67 244 78)(font "Arial" (color 0 0 0)))
+		(text "led_pio_external_connection" (rect 60 83 240 97)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 107 260 118)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 195 123 229 137)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 229 147 267 158)(font "Arial" (color 0 0 0)))
+		(text " first_nios2_system " (rect 425 168 522 179)(font "Arial" ))
 		(line (pt 224 32)(pt 288 32))
 		(line (pt 288 32)(pt 288 168))
 		(line (pt 224 168)(pt 288 168))
@@ -283,21 +297,6 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 512 0)(pt 512 184))
 		(line (pt 0 184)(pt 512 184))
 		(line (pt 0 0)(pt 0 184))
-	)
-)
-(symbol
-	(rect 568 264 600 280)
-	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
-	(text "inst1" (rect 3 5 27 17)(font "Intel Clear" )(invisible))
-	(port
-		(pt 16 16)
-		(output)
-		(text "1" (rect 19 7 26 19)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 19 7 26 19)(font "Courier New" (bold))(invisible))
-		(line (pt 16 16)(pt 16 8))
-	)
-	(drawing
-		(line (pt 8 8)(pt 24 8))
 	)
 )
 (connector
