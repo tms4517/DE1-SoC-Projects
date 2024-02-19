@@ -9,12 +9,12 @@ module power3
   , input  var logic i_clkEn
   , input  var logic i_srst
 
-  , input  var logic [7:0] i_x
+  , input  var logic [31:0] i_x
 
-  , output var logic [7:0] o_xPower
+  , output var logic [31:0] o_xPower
   );
 
-  logic [7:0] xPower1_q, x2_q, xPower2_q, xPower3_q;
+  logic [31:0] xPower1_q, x2_q, xPower2_q, xPower3_q;
 
   assign o_xPower = xPower3_q;
 
