@@ -18,3 +18,54 @@ verifies the output against an expected value.
 To create the tb, run a simulation and generate waveforms displaying the
 signals: `cd tb && make all`.
 
+## FPGA
+
+The Platform Designer tool was used to generate a NiosII processor, include
+necessary components, and configure how they connect together. Shown below is a
+screenshot of the configured system.
+
+![niosIISystem](images/niosIISystem.png)
+
+### Clock source
+
+A clock source IP is instantiated. It receives a clock input from the on-board
+oscillator and outputs a clock and reset interface used by the rest of the
+NiosII system.
+
+### JTAG UART
+
+The JTAG UART core with Avalon interface implements a method to communicate
+serial character streams between a host PC and the NiosII processor. The core
+provides an Avalon interface that hides the complexities of the JTAG interface
+from embedded software programmers. The NiosII processor communicates with the
+core by reading and and writing control and data registers.
+
+The JTAG UART core uses the JTAG circuitry built in to Intel FPGAs, and
+provides host access via the JTAG pins on the FPGA. For the Nios II processors,
+device drivers are provided in the hardware abstraction layer (HAL) system
+library, allowing software to access the core using the ANSI C Standard Library
+stdio.h routines.
+
+The figure below shows a block diagram of the JTAG UART core and its connection to the JTAG circuitry inside the Intel FPGA.
+
+![jtagUart](images/jtagUart.png)
+
+More info can be found here: https://www.intel.com/content/www/us/en/docs/programmable/683130/21-4/jtag-uart-core.html
+
+
+### Interval timer
+
+An Interval Timer core with Avalon interface is instantiated for the Nios II
+processor system.
+
+The timer was configured as 'Full-featured'. This configuration includes a timer with variable period that can be started and stopped under processor control.
+
+More info can be found here: https://www.intel.com/content/www/us/en/docs/programmable/683130/21-4/interval-timer-core.html
+
+### System ID
+
+The system ID core with Avalon interface is a simple read-only device that provides Platform Designer systems with a unique identifier. Nios II processor
+uses the system ID core to verify that an executable program was compiled
+targeting the actual hardware image configured in the target FPGA. If the expected ID in the executable does not match the system ID core in the FPGA, it is possible that the software will not execute correctly.
+
+More info can be found here: https://www.intel.com/content/www/us/en/docs/programmable/683130/21-4/interval-timer-core.html
