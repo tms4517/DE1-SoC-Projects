@@ -105,4 +105,13 @@ MOre info on creating a custom instruction slave can be found here: https://www.
 Note: A step-by-step guide to instantiating all the modules can be found in
 `../DSDCoursework/coursework.pdf`.
 
+## Software
 
+A Hello World template NiosII application and BSP was created using the Eclipse
+IDE. The hello_world.c program generated was replaced by the code in
+`/fpga/software/power3/hello_world.c`. The code measures the time taken for the
+processor to calculate the cube of a number in software by emulating fixed point
+additions and the time taken using the custom instruction slave.
+
+Note: Remember to add the interval timer to your timestamp timer settings in
+the BSP.
