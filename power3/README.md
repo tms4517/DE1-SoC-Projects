@@ -103,7 +103,7 @@ More info can be found here: https://www.intel.com/content/www/us/en/docs/progra
 The power3 module was instantiated as a multi-cycle custom instruction slave
 using Platform Designer and its ports interfaced to the NiosII processors's custom instruction master interface.
 
-MOre info on creating a custom instruction slave can be found here: https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwikxci4p7yEAxV7QEEAHQwKCvMQFnoECBEQAQ&url=https%3A%2F%2Fcdrdv2-public.intel.com%2F666927%2Fug_nios2_custom_instruction-683242-666927.pdf&usg=AOvVaw3pag7AvEcMGD2aE0cWhAt3&opi=89978449
+More info on creating a custom instruction slave can be found here: https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwikxci4p7yEAxV7QEEAHQwKCvMQFnoECBEQAQ&url=https%3A%2F%2Fcdrdv2-public.intel.com%2F666927%2Fug_nios2_custom_instruction-683242-666927.pdf&usg=AOvVaw3pag7AvEcMGD2aE0cWhAt3&opi=89978449
 
 
 Note: A step-by-step guide to instantiating all the modules can be found in
