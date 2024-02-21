@@ -19,7 +19,9 @@ A simple C++ tb was created. The tb drives the input and after 3 clock cycles
 verifies the output against an expected value.
 
 To create the tb, run a simulation and generate waveforms displaying the
-signals: `cd tb && make all`.
+signals as shown below: `cd tb && make all`.
+
+![waveform](images/waveform.png)
 
 ## FPGA
 
