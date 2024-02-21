@@ -10,6 +10,9 @@ shown below:
 
 ![power3](images/power3.png)
 
+Note: The `i_clkEn` and `i_srst` ports are necessary for the module to be
+integrated as a custom instruction slave.
+
 ## TB
 
 A simple C++ tb was created. The tb drives the input and after 3 clock cycles
