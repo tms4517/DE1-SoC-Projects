@@ -1,4 +1,4 @@
-THe aim of this project is to create a simple custom instruction slave and
+The aim of this project is to create a simple custom instruction slave and
 interface it to a NiosII soft-core processor.
 
 ## RTL
@@ -68,4 +68,41 @@ The system ID core with Avalon interface is a simple read-only device that provi
 uses the system ID core to verify that an executable program was compiled
 targeting the actual hardware image configured in the target FPGA. If the expected ID in the executable does not match the system ID core in the FPGA, it is possible that the software will not execute correctly.
 
-More info can be found here: https://www.intel.com/content/www/us/en/docs/programmable/683130/21-4/interval-timer-core.html
+More info can be found here: https://www.intel.com/content/www/us/en/docs/programmable/683130/21-4/system-id-peripheral-core.html
+
+### NiosII/s Processor
+
+A NiosII processor with 2KB instruction cache was instantiated. Hardware multiplication support was not enabled so that the improvement in using a custom instruction slave to calculate the cube of a number was significant.
+
+More info can be found here: https://www.intel.com/content/www/us/en/docs/programmable/683620/current/introduction.html
+
+### SDRAM
+
+The Altera DE1-SOC board contains an SDRAM chip. To interface to the SDRAM chip, an SDRAM Controller IP was instantiated in Platform Designer to make use
+of a memory region of 8 MB.
+
+For proper operation of the SDRAM, it is necessary that its clock signal leads
+the Nios II system clock by 3 ns to compensate for clock skew (due to the
+physical characteristics of the board). This is accomplished by instantiating a PLL from the IP Catalog tab in the .bdf file.
+
+Below is a screenshot of the .bdf file. As shown, a 50MHz reference clock is
+provided as input and two clocks are output at the same frequency but with a
+phase difference.
+
+![schematic](images/schematic.png)
+
+More info can be found here: https://www.intel.com/content/www/us/en/docs/programmable/683130/21-4/sdram-controller-core.html
+
+### Power3
+
+The power3 module was instantiated as a custom instruction slave using Platform
+Designer and its ports interfaced to the NIosII processors's custom instruction
+master interface.
+
+MOre info on creating a custom instruction slave can be found here: https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwikxci4p7yEAxV7QEEAHQwKCvMQFnoECBEQAQ&url=https%3A%2F%2Fcdrdv2-public.intel.com%2F666927%2Fug_nios2_custom_instruction-683242-666927.pdf&usg=AOvVaw3pag7AvEcMGD2aE0cWhAt3&opi=89978449
+
+
+Note: A step-by-step guide to instantiating all the modules can be found in
+`../DSDCoursework/coursework.pdf`.
+
+
